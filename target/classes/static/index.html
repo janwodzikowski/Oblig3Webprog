@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        span.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Bestilling av kinobiletter</h1>
+    <div class="form-group">
+        <label for="film">Velg film:</label>
+        <select class="form-control" name="film" id="film">
+            <option value="velgFilm">Velg film her</option>
+            <option value="harryPotter">Harry Potter</option>
+            <option value="hobbiten">Hobitten</option>
+            <option value="barbie">Barbie</option>
+            <option value="simpsons">Simpsons</option>
+        </select>
+        <span id="filmFeil" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="antall">Antall:</label>
+        <input type="number" class="form-control" id="antall" name="antall">
+        <span id="antallFeil" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="fornavn">Fornavn:</label>
+        <input type="text" class="form-control" id="fornavn" name="fornavn">
+        <span id="fornavnFeil" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="etternavn">Etternavn:</label>
+        <input type="text" class="form-control" id="etternavn" name="etternavn">
+        <span id="etternavnFeil" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="telefonnr">Telefonnr:</label>
+        <input type="text" class="form-control" id="telefonnr" name="telefonnr">
+        <span id="telefonnrFeil" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="epost">Epost:</label>
+        <input type="text" class="form-control" id="epost" name="epost">
+        <span id="epostFeil" class="error"></span>
+    </div>
+
+    <button type="button" class="btn btn-primary" onclick="riktigInput()">Kjøp billett</button>
+
+    <button type="button" class="btn btn-danger" onclick="slettData()">Slett alle billetter</button>
+
+
+    <div class="col-md-8">
+        <h3>Alle billetter</h3>
+        <div id="billettTabell"></div>
+    </div>
+</div>
+
+<script src="javascript.js"></script>
+</body>
+</html>
